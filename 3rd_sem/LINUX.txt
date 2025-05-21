@@ -1,0 +1,409 @@
+LINUX ( 1991 'Linux tervalds' ) basicly open sourced kernel based UNiX .
+why using : - open sources, multiuser, multitasking, security,portability.
+
+Kernel = Kernel is core part of OS managing system resources and communication bw hardware and software.
+
+UNIX - powerfull, multiuser, multitasking, operating system developed in 1970 at AT&T's Bell Labs.
+IT is licensed.
+
+Distros - An OS made from a software collection.
+	CentOS, Ubuntu, Desbian, Xubuntu, kali Linux
+
+hypervisor - virtualBox it share the hardware.
+1.bare metal
+2.hosted 
+
+# :- root user
+$ :- normal user
+
+where can we remote my Linux?
+putty, windows cmd, git bash etc. 
+
+PuTTY: PuTTY is a free and open-source terminal emulator, serial console and network file transfer application. It supports several network protocols, including SCP, SSH, Telnet, rlogin, and raw socket connection. It can also connect to a serial port. The name "PuTTY" has no official meaning.
+
+WinSCP :- for sharing file from your current working os to remote os.
+
+CAMMANDS : -
+
+hostname
+
+whoami
+
+ip addr / ifconfig
+
+date -> to show date { date +%D, date +%T }
+
+pwd (path)
+
+ls
+
+ls name* (all dir starting with name)
+
+ls -l *.xml / .FILE_EXTENSION (show all file with extension .xml)
+
+ls -ltr (show all file with permissions and size and modifying time and )
+ls -lh (human readable)
+
+{
+permission :-
+-rwxrwxrwx / drwxrwxrwx (have 3 part)
+start indicate - (regular file) or d (directry)
+rwx : read, write, execute
+1.for file owner 
+2.for group owner of file
+3.for all other user
+}
+
+mkdir 
+
+cd / [root dir]
+
+cd .. (one dir back)
+absolute path : path from starting
+relative path : path from current dir
+clear / cntl + l
+
+touch (make file)
+
+rmdir
+
+rm -r name (delete dir have  child folder)
+CAMMAND --help (information)
+man (manual)
+
+vi editer --
+{
+.press i to enter insert mode.
+.now enter anything.
+.to exit insert mode press esc.
+.to save file press shift + : .
+.to quit the editer press wq .
+
+}
+
+su - (switch root user)
+
+cat
+{
+to search a word 
+cat FILE_NAME | grep WORD_NAME
+}
+
+less (read file in viwer)(press q exit viewer){
+.shift + g - to reach end of file
+.shift +p - to reach start of file
+:/SEARCH_WORD  [to search any word in current page]
+?SEARCH_WORLD [search in whole file](press 'n' for next word)
+}
+more FILE_NAME
+
+head -1 FILE_NAME [show 1st line of file]
+tail -2 FILE_NAME [SHOW LAST 2 LINE OF FILE]
+
+wc NAME (words count)
+wc -l NAME (how many lines in file)
+
+diff NAME1 NAME2 (campare two file)
+
+- To package two or more file -
+use ' tar ' command
+tar cvf PKG_NM.tra FILE1_NM FILE2_NM 
+
+-to compress a folder-
+tar -czf NAME.tar.gz FOLDER_NAME
+
+-to uncompress folder-
+tar -xzf NAME.tar,gz
+
+- TO unpackage files -
+untar :-
+tar xvf NAME
+
+{compress file}
+gzip NAME (to zip file)
+
+{Decompress file}
+gupzip NAME (to unzip file)
+
+cp NAME destination
+cp ../ NAME . (copy file from previos dir to crrnt dir)
+
+mv NAME CHANGED_NAME
+
+-combine files data and store in in file - 
+cat FILE_1 FILE_2 > FILE_3
+
+- split file -
+split -l 1 FILE_1
+{ this cammnd split FILE_1 to make files having 1 line each and give random name}
+
+sort FILE_NAME
+[sort file data in asc]
+sort FILE_NAME | uniq 
+[sort with remove duplicates]
+
+whereis CMMND [this command is give us a path where you entered the command save ]
+
+
+LINUX FILE SYSTEM
+
+every thing in Linux is file even the command also a file
+save in -> usr/bin
+
+-> OS store and manage data on disk or partitions using a structure called FileSysytem.
+FileSystem includes files, directories and it's related permissions.
+
+-> FS strores data in hierarchy of directories and files.
+
+~ TYPES OF FILE SYSTEM :
+-ext3
+-ext4
+-XFS (extended file system)
+-FAT
+-BTRFS (B-tree file system) 
+etc.
+
+ 
+?-how to check your Linux file system.
+lsblk -f [cmnd]
+
+-> XFS (Extended File System):
+.XFS, 64bit high performance FS
+.support parallel I/O operations
+.Works well with large files
+
+~
+Each directory in Linux file system has a specific function, Some of a few key directories are listed below :
+
+/ (root directory): The root directory is the top-level directory in the Linux file system. All other directories and files are contained within the root directory.
+
+/bin: The /bin stands for binaries. This directory contains essential command-line tools and programs that are required for basic system administration tasks.
+
+/boot: The /boot directory contains the boot loader files and kernel images needed to start the system.
+
+/dev: The /dev directory contains device files that represent hardware devices and virtual devices such as terminals, printers, and disks.
+/etc: The /etc directory contains system configuration files that are used by various applications and services on the system.
+
+/home: The /home directory contains the home directories of users on the system. Each user has their own subdirectory within /home where they can store their personal files and settings.
+
+/lib: The /lib directory contains shared library files that are needed by various programs on the system.
+
+/media: The /media directory is used to mount removable media such as CDs, DVDs, and USB drives.
+
+/mnt: The /mnt directory is used to mount file systems temporarily, such as network file systems or disk images.
+
+/opt: The /opt directory is used to store additional software packages that are not part of the core system.
+
+/proc: The /proc directory is a virtual file system that provides information about running processes and system resources.
+
+/run: The /run directory contains temporary files that are created by system services and daemons.
+
+/sbin: The /sbin directory contains system binaries and administrative tools that are required for system maintenance.
+
+/srv: The /srv directory is used to store data for services provided by the system.
+
+/sys: The /sys directory is a virtual file system that provides information about the system's hardware and devices.
+
+/tmp: The /tmp directory contains temporary files that are created by applications and services running on the system.
+
+/usr: The /usr directory contains user-level programs, libraries, documentation, and shared data files.
+
+/var: The /var directory contains variable data files that change frequently, such as log files and system databases.
+
+{ vi EDITOR } -
+[
+i - insert
+o - insert on next line 
+a - insert after a space
+esc - escape out of any mode
+:q! quit without saving
+:wq! - quit and save
+r - replace
+d - delete 
+u - undo 
+x - remove one char
+.backspace : - 
+/ - forward search 
+? - backward search 
+]
+
+-{nano file editor}(easy to use)
+
+- wildcards - 
+A wildcard is a character that can be used as a substitute for any of a class of characters in a search.
+
+*- zero or more characters
+{
+.create 10 file start with file1 : touch file{1..10}
+to delete all files : rm file* (all files will delete starting with file)
+.file end with .xml or other extention : ls -l *.xml
+-> abc.xml  ghi.xml  fact.sh
+}
+
+?- single character
+{
+.files in which a single char diff : ls -l ?123
+-> a123  b123  c123
+: ls -l te?t
+-> text  tect  tent  tept
+.we can use multiple que mark in cmmnd : ls -l ???? (file have 4 car)
+-> text tept dave 
+}
+
+[]- range characters 
+{
+.files in which char may be a, b, c : ls -l [abc]123
+-> a123  b123  c123
+}
+
+que : cannd for list file's name have a char numeric
+ans : ls -l *[0-9]* 
+
+^ - beginning of line
+{
+.file data start with R
+cat FILE_NAME | grep ^R
+-> Ram  Raju  Ramesh  
+}
+
+$ - end of line
+{
+.file data end with sh : cat FILE_NAME | grep sh$ 
+-> Devansh  Shivansh  
+}
+
+- grep command 
+"Global Regular Expression Print"
+.Grep cammand search for  a particular string/keyword from a file and print lines matching a pattern.
+.It check line by line and print lines matching given pattern.
+syntex : grep[option]..pettern[File]..
+{
+search a name in a file :
+:grep NAME FILE_NAME  
+ grep Nita csv1 
+(this cmmnd also search words starting to given keyword)
+:grep Ni csv1
+
+1. to ignore the upper and lower case while searching 
+:grep -i WORD FILE_NAME
+ grep -i nita csv1
+
+2. to search everything except given pattern/keyword
+:grep -v WORD FILE_NAME
+
+3. to print how many times a word present in file
+:grep -c WORD FILE_NAME
+
+4. to search exact match of a given file 
+: grep -w WORD FILE_NAME
+
+5. to print the line no. of matches of given keyword in a file
+: grep -n WORD FILE_NAME
+
+6 to search a given keyword in multiple files
+:grep WORD FILE1 FILE2 FILE3 
+
+7. to suppress file names while seach a given keyword in multiple  file
+: grep -h WORD FILE1 FILE2
+
+8. to seach multiple keyword in a file
+: grep -e WORD1 -e WORD2 -e WORD3 FILE_NAME
+
+ 9. search multiple keyword in multiple file
+: grep -e WORD1 -e WORD2 -e WORD3 FILE1 FILE2 FILE3
+
+10. to print files nams which matches given keyword
+: grep -l WORD FILE1 FILE2 FILE3
+
+11. to get the keyword/pattern from a file and match with a another file
+: grep -f keyword.txt FILE1 FILE2(names in keyword.txt search files)
+
+11. to print the matching line which start with given keyword 
+: grep "^WORD" FILE
+
+12.  to print the matching line which end with given keyword 
+: grep "WORD$" FILE_NAME
+
+13. suppose we have 100 files in a dir. and we need to search a keyword in all the files 
+: grep -R WORD DIR_NAME
+
+14. we can use egrep cmmnd for the multiple keywords search 
+: egrep "KEY1|KEY2|KEY3" FILE_NAME
+
+=> BELOW CMMND MAY USE IN SHELL SCRIPTING TO CHECK CONDITION
+
+15. if u jst wanna search but dont wanna print on terminal
+: grep -q KEYWORD FILENAME (-q : quit)
+
+16. if u wanna suppress error msg 
+: grep -s KEYWOPD FILE_NAME
+
+search dir : ls | grep WORD
+
+ 
+}
+
+=> sed -n 10 FILE_NAME (return 10 line of file)
+
+find /path/ -name FILE_NAME
+
+locate FILE_NAME (sudo updatedb) we have to updatecdb
+
+history to see previous used command
+
+--help attribute use to describe caoamnd
+
+
+bc (use bc to use in terinal some small calculation)
+(cntrl+c)
+
+cal (to show calenter)
+cal YEAR (year wise calender) cal jan 20223 
+
+uptime ( how much times your machine is working and how many users are working )
+
+script{
+after use this cammnd it record all execution in a file ,
+}cntrl + d (for exit ) it make a file name typescript.
+
+alias (this command make a shortcut of any cmmnd)
+ex :- alias l="ls -ltr"
+alias -p (to check existing cmmnd)
+
+wget (to dwnld a file from internet)
+wget URL_OF _FILE
+wget -o USERS_NAME URL
+
+curl (call api cmnd)
+curl http://numbersapi.com/random(random fact represent)
+
+apt or yum/dnf (to install an application)
+
+rmp -qa | grep APP_NAME (to check if an app is installed??)
+dnf list installed
+
+(to start/stop service)
+systemctl start/stop/status SERVICE_NAME
+
+(to list all services on linux)
+systemctl lit-units --type=service --all
+
+(list all enviroment varable)
+printenv
+
+(to add enviroment variable)(temprary)
+export JAVA_HOME="/usr/lib/jvm/java_v"
+
+to add env var permanently
+source ~/.bash_profile
+
+print 2nd clmn of csv file
+awf -F, '{print $2}' NAME.csv 
+
+cut -c1-2 NAME(to print 1 to 2 char)
+
+sed -n '5p' NAME{to print 5th line}
+
+sed -n 's/FROM/TO/g' NAME{FROM keyword change to TO keyword}
+
+
