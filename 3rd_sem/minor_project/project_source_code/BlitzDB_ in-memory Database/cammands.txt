@@ -1,0 +1,7 @@
+./client set <key> <val>
+./client get <key>
+./client del <key>
+
+./client zadd <zset_name> <score> <member> 
+./client zscore <zset_name> <member>
+./client TTL <key> <time_in_miniseconds>
